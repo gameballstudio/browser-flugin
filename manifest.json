@@ -1,0 +1,38 @@
+{
+
+    "manifest_version": 2,
+    "name": "TAW Data Descriptor",
+    "version": "1.9.4",
+    "description": "Decriptor agent for Firefox browser. Copyright by The Auto Ware Technology Group",
+    
+    "applications": {
+        "gecko": {
+          "id": "namtt@gbcluster.com"
+        }
+    },
+
+    "icons": {
+      "48": "icons/icon.png"
+    },
+
+    "background": {
+        "scripts": ["button.js"]
+      },
+    
+    "browser_action": {
+    "browser_style": true,
+    "default_popup": "popup_menu.html",
+    "default_icon": {
+        "32": "icons/button.png"
+    }
+    },
+
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "exclude_matches": ["*://*.14.161.40.154/*", "*://*.192.168/*", "*://*.gbcluster.com/*", "*://*.theautoware.com/*", "*://*.baomoi.com/*", "*://*.youtube.com/*", "*://*.google.com/*", "*://*.localhost/*"],
+        "js": ["block.js"]
+      }
+    ]
+  
+  }
